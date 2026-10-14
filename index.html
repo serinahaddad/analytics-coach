@@ -1,0 +1,430 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MBA Analytics Learning Coach</title><style>
+:root{font-family:Inter,ui-sans-serif,system-ui,Arial,sans-serif;color:#17233d;background:#f5f6ff}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 8% 4%,#e0edff 0,transparent 32%),radial-gradient(circle at 90% 14%,#f9defa 0,transparent 30%),linear-gradient(160deg,#f7faff,#f8f5ff 65%,#f5fbff)}
+.shell{max-width:1080px;margin:34px auto;padding:0 22px 30px}.top{display:flex;justify-content:space-between;align-items:center;gap:18px}.shell>header.top{background:linear-gradient(115deg,#243b95 0%,#5144b6 52%,#9a4fc6 100%);color:#fff;padding:32px 36px;border-radius:25px;box-shadow:0 20px 48px #3b429b30;position:relative;overflow:hidden}.shell>header.top:after{content:'✦';position:absolute;font-size:180px;color:#ffffff12;right:85px;top:-75px;pointer-events:none}.shell>header .muted,.shell>header .pill{color:#e5eaff}.shell>header h1{font-size:36px;letter-spacing:-1px;margin:5px 0 8px}.shell>header .tag{background:#ffffff25;border:1px solid #ffffff55;color:white;backdrop-filter:blur(5px)}.muted{color:#66738c}.tag{background:#e8e9ff;color:#4841a0;padding:9px 14px;border-radius:30px;font-size:12px;font-weight:800;white-space:nowrap}.card{background:#fff;border:1px solid #e6e9f6;border-radius:24px;padding:30px;margin-top:22px;box-shadow:0 12px 36px #303a7412}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.modules{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}button,.choice{cursor:pointer;border:1px solid #d8dff0;background:white;border-radius:13px;padding:13px 16px;color:#263456;font:inherit;text-align:left;transition:background .18s,border-color .18s,transform .18s,box-shadow .18s}button:hover,.choice:hover{border-color:#8379e5;background:#f8f6ff;transform:translateY(-1px)}button:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #f2a34b;outline-offset:2px}button:disabled{cursor:not-allowed;opacity:.62;transform:none}.primary{background:linear-gradient(110deg,#474bd2,#7650d7);color:white;border-color:transparent;text-align:center;font-weight:750;box-shadow:0 7px 17px #5952c72c}.primary:hover{background:linear-gradient(110deg,#3539bd,#6840c5);color:white;box-shadow:0 9px 21px #5952c743}.modules button{min-height:120px;padding:20px 18px;font-weight:750;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:9px;border:1px solid #e5e6f5;box-shadow:0 5px 16px #303a7409}.modules button:before{content:'◆';position:absolute;right:14px;top:9px;font-size:28px;color:#7166db40}.modules button:nth-child(5n+1){background:#f0f3ff;border-top:4px solid #6a69d8}.modules button:nth-child(5n+2){background:#effaf9;border-top:4px solid #2da99d}.modules button:nth-child(5n+3){background:#fff5ee;border-top:4px solid #ee9a4d}.modules button:nth-child(5n+4){background:#f9efff;border-top:4px solid #b06fd3}.modules button:nth-child(5n){background:#eef8ff;border-top:4px solid #4b9bd7}.modules button .muted{font-weight:500;line-height:1.45}.active{border:2px solid #5c54cb!important;box-shadow:0 0 0 3px #7770e323!important}.selected{background:#ecebff;border:2px solid #5d53cf}.option{display:block;width:100%;margin:10px 0;padding:15px 17px}.option:hover{box-shadow:0 4px 14px #4540a41a}h1{margin:0;font-size:30px}h2{font-size:24px;margin:0 0 15px;letter-spacing:-.45px}h3{font-size:18px;margin:10px 0}p{line-height:1.65}.steps{display:flex;gap:8px;margin:20px 0 26px}.step{height:10px;flex:1;background:#e9e9f4;border-radius:12px}.step.on{background:linear-gradient(90deg,#4b65db,#aa61d6)}.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}.feedback{background:linear-gradient(115deg,#eef4ff,#f8f2ff);padding:20px;border-radius:16px;margin:18px 0;border-left:5px solid #7062d8}.feedback li{margin:8px 0;line-height:1.5}textarea{width:100%;min-height:150px;border:1px solid #d4d8ed;border-radius:14px;padding:15px;font:inherit;resize:vertical;background:#fcfcff}select{padding:12px 16px;border-radius:12px;border:1px solid #d5d9ed;background:#fff;max-width:100%;font-weight:650}.pill{font-size:12px;color:#5e62a0;letter-spacing:.8px;font-weight:800;text-transform:uppercase}.hidden{display:none}.small{font-size:13px}.badge{display:inline-block;background:#eeedff;border-radius:8px;padding:6px 10px;margin:4px}.progress{font-weight:800;color:#5551bd;background:#efeeff;border-radius:20px;padding:8px 13px}label{display:block;margin-bottom:9px;font-weight:700}.shell>p.small{max-width:930px;margin:19px auto;text-align:center;line-height:1.65}@media(max-width:700px){.modules,.grid{grid-template-columns:1fr}.top{align-items:flex-start}.shell>header.top{padding:25px 22px;flex-wrap:wrap}.shell>header h1{font-size:28px}.card{padding:19px}.modules button{min-height:90px}.shell{padding:0 13px;margin:15px auto}}
+</style></head><body><div class="shell"><header class="top"><div><div class="pill">MBA DATA ANALYTICS & VISUALIZATION</div><h1>Analytics Learning Coach</h1><div class="muted">Explore concepts. Make decisions. Build analytical confidence.</div></div><span class="tag">MBA Review Studio ✨</span></header><div class="card" id="app"></div><p class="muted small">Student privacy: this prototype does not automatically track activity or send answers to the instructor. To document participation, export your completed review summary and submit it through Canvas. Quiz feedback uses preset answers; open-ended responses are not AI-graded.</p></div><script>
+const modules=[
+  {
+    "name": "Data Preparation & Management",
+    "exam": "both",
+    "questions": [
+      [
+        "Which tool best summarizes revenue by region and category?",
+        [
+          "VLOOKUP",
+          "PivotTable",
+          "IF",
+          "Conditional formatting"
+        ],
+        1,
+        "PivotTables summarize numerical values across categories."
+      ],
+      [
+        "To flag orders above $10,000, which function is most directly useful?",
+        [
+          "IF",
+          "LEFT",
+          "COUNTBLANK",
+          "TEXTJOIN"
+        ],
+        0,
+        "IF evaluates a logical condition and returns different outputs."
+      ],
+      [
+        "An Excel export contains repeated Order IDs. What should you do before using Remove Duplicates?",
+        [
+          "Delete every repeated ID",
+          "Determine whether repeated IDs represent legitimate line items or erroneous records",
+          "Replace repeated IDs with zero",
+          "Ignore all duplicates"
+        ],
+        1,
+        "Inspect the record grain and compare relevant fields before removing duplicates; multiple line items can legitimately share an Order ID."
+      ],
+      [
+        "A blank Ad Spend cell appears in a campaign export. What is the best first step?",
+        [
+          "Treat it as zero",
+          "Investigate its source and missingness before choosing a treatment",
+          "Delete the entire campaign",
+          "Assume the channel was free"
+        ],
+        1,
+        "A blank does not necessarily mean zero. Investigate, document, and assess impact."
+      ],
+      [
+        "A company surveys app users, but only people who voluntarily respond to an in-app invitation are included. Most respondents report high satisfaction. What is the strongest concern?",
+        [
+          "The sample is necessarily too small",
+          "People who choose to respond may differ systematically from those who do not",
+          "The survey results must be incorrect",
+          "The mean satisfaction score cannot be calculated"
+        ],
+        1,
+        "Voluntary response bias can make respondents unrepresentative of the target population, even when many people respond."
+      ]
+    ],
+    "role": "You are a business analyst preparing an Excel sales report. The VP wants to use your PivotTable to justify expanding a product line immediately. During inspection, you find blank revenue cells, repeated order IDs, and inconsistent category labels. Explain how you would identify and investigate missing values and potential duplicate transactions in Excel, distinguish legitimate repeated line items from erroneous duplicates, and decide what to clean before making a recommendation. What could go wrong if you skip these checks? The report also combines a customer lookup table with transactions. Explain how you would validate the Customer ID relationship before creating your PivotTable.",
+    "checks": [
+      "Use filters, COUNTBLANK or conditional formatting to locate missing values and determine why they are missing",
+      "Check order IDs and relevant combinations of fields to distinguish duplicate transactions from legitimate multiple line items",
+      "Standardize inconsistent categories and verify data types before building PivotTables",
+      "Do not automatically replace blanks with zero or delete repeated rows; document justified cleaning decisions",
+      "Explain how unclean data can distort totals, trends, and the business recommendation",
+      "Use a unique customer key to join tables and check for unmatched or duplicated keys.",
+      "Identify how voluntary participation, nonresponse, or missing values can systematically distort a business conclusion"
+    ]
+  },
+  {
+    "name": "Data Visualization",
+    "exam": "both",
+    "questions": [
+      [
+        "A sales director wants to compare revenue across eight product categories in one quarter. Which chart is most appropriate?",
+        [
+          "Line chart",
+          "Horizontal bar chart",
+          "Pie chart with eight slices",
+          "Scatterplot"
+        ],
+        1,
+        "A bar chart supports accurate comparisons across several categories."
+      ],
+      [
+        "A logistics manager wants to see how average delivery time changed each month over two years. Which chart is best?",
+        [
+          "Line chart",
+          "Pie chart",
+          "Single KPI card",
+          "Treemap"
+        ],
+        0,
+        "A line chart shows trends over ordered time periods."
+      ],
+      [
+        "An analyst wants to investigate whether advertising spend and sales revenue move together across 40 campaigns. Which chart should be used?",
+        [
+          "Stacked bar chart",
+          "Pie chart",
+          "Scatterplot",
+          "Gauge"
+        ],
+        2,
+        "A scatterplot displays relationships between two numerical variables; correlation does not establish causation."
+      ],
+      [
+        "Two regions have sales of $98K and $102K. A bar chart starts its vertical axis at $95K, making the difference appear enormous. What is the strongest critique?",
+        [
+          "The colors should be brighter",
+          "The truncated baseline exaggerates the apparent difference; show a zero baseline for bars and provide context",
+          "All bar charts must be replaced with pie charts",
+          "The chart proves the higher-sales region is more profitable"
+        ],
+        1,
+        "Truncated bar axes exaggerate magnitude. Inspect scales, labels, denominators, and comparability before concluding."
+      ],
+      [
+        "A Power BI Region slicer changes a sales card but not a product chart. What should the analyst investigate first?",
+        [
+          "The chart font",
+          "The page background",
+          "Visual interactions and relationships between tables",
+          "The company logo"
+        ],
+        2,
+        "Visual interactions and model relationships determine how slicers filter visuals."
+      ]
+    ],
+    "role": "You are presenting an executive dashboard. Select appropriate charts for comparing categories, showing trends, and exploring the relationship between two numeric measures. A colleague used a truncated axis to make a small sales difference look dramatic. Explain how you would detect and correct the misleading display, and verify that a Power BI Region slicer filters all intended visuals. Distinguish association from causation.",
+    "checks": [
+      "Match chart type to the analytical question: bar for categories, line for time trends, scatterplot for relationships",
+      "Inspect axes, scales, labels, and denominators for misleading visual impressions",
+      "Explain the size of a difference using appropriate context, not visual exaggeration",
+      "Distinguish association from causation in scatterplots",
+      "Verify Power BI visual interactions and model relationships before relying on slicer-filtered results"
+    ]
+  },
+  {
+    "name": "Descriptive Data Analytics",
+    "exam": "both",
+    "questions": [
+      [
+        "Supplier A: mean 5 days, SD 1. Supplier B: mean 8 days, SD 1.2. Who has lower CV?",
+        [
+          "Supplier A",
+          "Supplier B",
+          "Equal",
+          "Cannot tell"
+        ],
+        1,
+        "CV(A)=1/5=20%; CV(B)=1.2/8=15%. B has lower relative variability, but a longer mean lead time."
+      ],
+      [
+        "Monthly sales average 500, SD 80; observed 660. What is the z-score?",
+        [
+          "0.5",
+          "1.25",
+          "2",
+          "3"
+        ],
+        2,
+        "z=(660−500)/80=2, meaning two standard deviations above the mean."
+      ],
+      [
+        "Mean substantially exceeds median. What might this indicate?",
+        [
+          "Left skew",
+          "Right skew",
+          "Perfect symmetry",
+          "Zero variance"
+        ],
+        1,
+        "A mean above the median often suggests right skew, although distribution inspection is important."
+      ],
+      [
+        "A supplier has mean lead time 10 days and SD 2 days. What is its CV?",
+        [
+          "5%",
+          "20%",
+          "50%",
+          "200%"
+        ],
+        1,
+        "CV = SD / mean = 2 / 10 = 20%."
+      ],
+      [
+        "A z-score of −1.5 means the observation is:",
+        [
+          "1.5 standard deviations below the mean",
+          "1.5 units below zero",
+          "1.5 times the mean",
+          "An impossible value"
+        ],
+        0,
+        "A negative z-score indicates a value below the mean in standard deviation units."
+      ]
+    ],
+    "role": "A procurement director insists that the supplier with the lowest coefficient of variation is automatically best. Challenge the conclusion using average lead time, variability, and operational priorities.",
+    "checks": [
+      "Calculate and interpret relative variability correctly",
+      "Distinguish relative variability from average lead time",
+      "Consider service levels, stockout risk, and trade-offs"
+    ]
+  },
+  {
+    "name": "Inferential Analytics: Means, Proportions & Paired Populations",
+    "exam": "both",
+    "questions": [
+      [
+        "The same 24 stores are measured before and after a new sales-training program. A 95% confidence interval for the mean paired difference in weekly sales (After − Before) is [−$120, $280]. At the 5% significance level, what can you conclude?",
+        [
+          "The program significantly increased average weekly sales",
+          "The program significantly decreased average weekly sales",
+          "There is insufficient evidence of a change in mean weekly sales",
+          "The program had exactly zero effect in every store"
+        ],
+        2,
+        "The interval for the mean within-store paired difference includes zero. Therefore, the corresponding two-sided paired test does not establish a change at the 5% level; this does not prove the program had no effect."
+      ],
+      [
+        "A p-value of .03 means:",
+        [
+          "Null is 3% likely",
+          "Results at least this extreme have probability .03 under the null model",
+          "Effect is 3%",
+          "Sample is biased"
+        ],
+        1,
+        "A p-value is conditional on the null model and test assumptions."
+      ],
+      [
+        "Which procedure tests whether a population proportion differs from a specified value?",
+        [
+          "One-sample proportion z-test",
+          "Paired t-test",
+          "Simple regression",
+          "PivotTable"
+        ],
+        0,
+        "A one-sample proportion test evaluates a claim about a population proportion under appropriate conditions."
+      ],
+      [
+        "Before-and-after sales are measured for the same 20 stores. Which test fits?",
+        [
+          "Independent-samples t-test",
+          "Paired t-test",
+          "Two-proportion z-test",
+          "Chi-square test"
+        ],
+        1,
+        "Matched before-and-after observations are dependent; test the mean of the within-store differences."
+      ],
+      [
+        "A company compares average order values from two independent customer groups, A and B. Which analysis most directly tests whether their population mean order values differ?",
+        [
+          "A two-sample test for independent means, after checking assumptions",
+          "A paired t-test because both groups are customers",
+          "A one-proportion z-test",
+          "A PivotTable alone proves a population difference"
+        ],
+        0,
+        "Order value is numerical and the groups are independent. Use an appropriate independent two-sample mean test, checking assumptions and reporting uncertainty and practical importance."
+      ]
+    ],
+    "role": "A business leader asks whether average performance changed after an intervention and whether conversion differs from a target. Explain when a paired comparison is appropriate, interpret a paired confidence interval, and distinguish statistical significance from business importance.",
+    "checks": [
+      "Distinguish tests for means from tests for proportions",
+      "Determine whether observations are independent or paired",
+      "For paired samples, analyze within-unit differences rather than treating observations as independent",
+      "Interpret p-values and confidence intervals in relation to the null hypothesis and significance level",
+      "Separate statistical significance from business importance"
+    ]
+  },
+  {
+    "name": "Case Study: TalkingData",
+    "exam": "both",
+    "questions": [
+      [
+        "TalkingData campaign data include installs, purchasers, ad spend, and revenue. Which metric best evaluates acquisition cost per purchaser?",
+        [
+          "Ad spend divided by purchasers",
+          "Installs divided by impressions",
+          "Revenue alone",
+          "Purchasers divided by revenue"
+        ],
+        0,
+        "Cost per purchaser = total ad spend / purchasers when purchaser count is nonzero."
+      ],
+      [
+        "Some Ad Spend values are blank. What should an analyst do first?",
+        [
+          "Treat every blank as zero",
+          "Identify affected records and assess missingness",
+          "Delete all channels",
+          "Use revenue instead of spend"
+        ],
+        1,
+        "Missing spend can distort profitability and return-on-spend comparisons."
+      ],
+      [
+        "One channel has more installs but fewer purchasers than another. What should you examine?",
+        [
+          "Only total installs",
+          "Conversion from installs to purchasers and acquisition costs",
+          "Chart colors",
+          "Alphabetical channel order"
+        ],
+        1,
+        "Installs alone do not indicate downstream effectiveness."
+      ],
+      [
+        "According to the TalkingData case, which combination best describes a core strength of the company?",
+        [
+          "Its mobile-data analytics capabilities, including a large data platform and expertise in gaming analytics",
+          "Its exclusive focus on manufacturing inventory",
+          "Its specialization in traditional print advertising",
+          "Its ability to guarantee every campaign is profitable"
+        ],
+        0,
+        "TalkingData built strengths in mobile-data analytics, including gaming analytics and its data platform. This company-level strength should not be confused with results in the supplemental campaign dataset."
+      ],
+      [
+        "A campaign export repeats Record_ID values. What is the safest first step?",
+        [
+          "Check whether duplicates are erroneous or reflect legitimate data grain",
+          "Remove all repeated rows automatically",
+          "Double all revenues",
+          "Ignore them"
+        ],
+        0,
+        "Validate identifiers and row grain before deduplication."
+      ]
+    ],
+    "role": "TalkingData leadership asks you to recommend where to invest the next campaign budget. Use the supplemental campaign dataset: compare channels or regions using spend, installs, purchasers, and revenue, explain data-quality concerns, and recommend an evidence-based next step. Cite actual figures from your workbook when available.",
+    "checks": [
+      "Compare relevant rates and financial measures rather than volume alone",
+      "Acknowledge missing Ad Spend and data limitations",
+      "Cite evidence from the supplemental workbook and avoid causal overclaims"
+    ]
+  },
+  {
+    "name": "Case Study: WSES Marketing Hypotheses",
+    "exam": "both",
+    "questions": [
+      [
+        "WSES evaluates whether an observed customer response proportion differs from a proposed benchmark. Which test family is appropriate?",
+        [
+          "Proportion hypothesis test",
+          "Paired mean test automatically",
+          "Correlation only",
+          "Descriptive chart only"
+        ],
+        0,
+        "A proportion test addresses a claim about the population response rate, subject to assumptions."
+      ],
+      [
+        "A two-sided hypothesis test gives p = 0.04 at α = 0.05. What is the defensible statistical decision?",
+        [
+          "Reject the null hypothesis",
+          "Prove the alternative is true",
+          "Claim a 96% probability of the alternative",
+          "Ignore the effect size"
+        ],
+        0,
+        "The result is statistically significant at 5%; its business importance must still be assessed."
+      ],
+      [
+        "WSES compares average customer spending between two independent groups. Which question matters first?",
+        [
+          "Whether the samples are independent or paired",
+          "Which chart is most colorful",
+          "Whether the mean is always causal",
+          "Whether to round the p-value to zero"
+        ],
+        0,
+        "The study design determines the correct test and interpretation."
+      ],
+      [
+        "In the WSES case, why is testing a market hypothesis more useful than relying only on an observed difference between two customer groups?",
+        [
+          "It helps assess whether the observed difference is distinguishable from sampling variation, given the study design",
+          "It guarantees the preferred marketing campaign will be profitable",
+          "It eliminates the need to define the outcome variable",
+          "It proves the marketing action caused the difference"
+        ],
+        0,
+        "The case emphasizes evidence-based marketing decisions. Statistical inference helps assess uncertainty, but sound interpretation still depends on the outcome, design, and practical relevance. This question does not assume unverified company background details."
+      ],
+      [
+        "A WSES marketing director strongly favors Campaign A. She highlights its higher conversion rate but ignores its lower average revenue per customer and higher acquisition costs. Which bias is most evident?",
+        [
+          "Undercoverage bias",
+          "Recency bias",
+          "Confirmation bias",
+          "Nonresponse bias"
+        ],
+        2,
+        "Confirmation bias occurs when decision-makers favor evidence supporting their existing beliefs while overlooking conflicting evidence."
+      ]
+    ],
+    "role": "A marketing director at WSES is frustrated: 'We tested two customer groups. Group A looks better on the dashboard, but the sales team says Group B brings in bigger orders. One analyst counted everyone contacted, another counted only people who bought, and a few records may represent repeat customers. I need to choose a rollout next week. Tell me which group wins.' Before recommending any analysis, ask clarifying questions about what the business wants to measure, how the groups were formed, what counts as a success, whether outcomes are numeric amounts or yes/no responses, sample sizes, independence, and data quality. Identify the variables and decide which analysis would fit the clarified question. Do not assume a statistical test before the business question is clear. This is an original WSES-inspired exercise, not a statement of actual case facts. Also consider whether the director or analysts may be selectively emphasizing evidence that supports their preferred group.",
+    "checks": [
+      "Clarify the decision objective, unit of observation, outcome definition, and whether groups are independent or matched",
+      "Determine whether the outcome is numeric (such as order value) or binary (such as conversion) before selecting an appropriate comparison",
+      "Investigate inconsistent denominators, repeat customers, missing values, and possible selection bias",
+      "Propose hypotheses and a suitable analysis only after clarifying the study design",
+      "Explain uncertainty, business importance, and why observational differences alone do not prove causation",
+      "Check for confirmation bias: evaluate conflicting evidence, costs, and alternative explanations before choosing a campaign"
+    ]
+  }
+];
+let state={exam:'midterm',module:0,stage:0,qi:0,answers:{},role:'',revision:'',reflection:'',show:false,clarifications:{}};const el=document.getElementById('app');const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const m=()=>modules[state.module];function reset(){state.stage=0;state.qi=0;state.answers={};state.role='';state.revision='';state.reflection='';state.show=false;state.clarifications={}}function render(){let s=state;let html=`<div class="top"><div><label for="exam">Exam review</label><select id="exam"><option value="midterm" ${s.exam==='midterm'?'selected':''}>Midterm</option><option value="final" ${s.exam==='final'?'selected':''}>Final (cumulative)</option></select></div><div class="progress">${s.stage===0?'Choose a module':'Step '+s.stage+' of 4'}</div></div>`;
+if(s.exam==='final'){html+=`<section class="feedback" style="margin-top:30px;padding:28px;text-align:center"><div style="font-size:40px;margin-bottom:12px">🚧</div><h2>Final Exam Review — Work in Progress</h2><p>Content hidden for now. The final review will become available later in the semester.</p><p class="muted small">Please use the Midterm tab for current review activities.</p></section>`;el.innerHTML=html;document.querySelector('#exam').onchange=e=>{s.exam=e.target.value;reset();render()};return;}
+if(s.stage===0){html+=`<h2 style="margin-top:24px">✨ Choose your learning adventure</h2><p class="muted">Each module combines a five-question knowledge check, an executive decision challenge, and reflection.</p><div class="modules">`+modules.map((x,i)=>s.exam==='midterm'&&x.exam==='final'?'':`<button class="${i===s.module?'active':''}" data-mod="${i}">${esc(x.name)}<div class="muted small">5 questions + applied role-play</div></button>`).join('')+`</div><div class="nav"><button class="primary" id="start">Start guided review →</button></div>`}
+if(s.stage>0){html+=`<div class="steps">${[1,2,3,4].map(i=>`<div class="step ${i<=s.stage?'on':''}"></div>`).join('')}</div><div class="pill">${esc(m().name)}</div>`}
+if(s.stage===1){let q=m().questions[s.qi];html+=`<h2>🧠 Independent quiz · ${s.qi+1} of ${m().questions.length}</h2><p><b>${esc(q[0])}</b></p>`+q[1].map((a,i)=>`<button class="option ${s.answers[s.qi]===i?'selected':''}" data-answer="${i}" ${s.show?'disabled':''}>${String.fromCharCode(65+i)}. ${esc(a)}</button>`).join('');if(s.show)html+=`<div class="feedback"><b>${s.answers[s.qi]===q[2]?'✓ Correct':'Review needed — correct answer: '+String.fromCharCode(65+q[2])}</b><p>${esc(q[3])}</p></div>`;html+=`<div class="nav"><button id="back">← Modules</button><button class="primary" id="quiznext" ${s.answers[s.qi]===undefined?'disabled':''}>${s.show?(s.qi===m().questions.length-1?'Continue to role-play →':'Next question →'):'Check answer'}</button></div>`}
+if(s.stage===2){html+=`<h2>💼 Executive decision challenge</h2><div class="feedback"><b>Executive challenge</b><p>${esc(m().role)}</p></div>${s.module===5?`<div class="feedback"><b>Ask the marketing director for clarification</b><p class="small">Select questions to reveal additional information. These are scripted prompts, not live AI responses. Some information remains unknown; state what else you would need.</p><div class="nav" style="justify-content:flex-start">${[["objective","What is the business objective?"],["outcome","How was performance measured?"],["groups","How were the groups formed?"],["quality","What data-quality concerns exist?"]].map(([k,t])=>`<button type="button" data-clarify="${k}">${t}</button>`).join("")}</div><div id="clarifications">${Object.entries(s.clarifications||{}).filter(([k,v])=>v).map(([k])=>`<p class="small"><b>${({objective:"Business objective",outcome:"Outcome measures",groups:"Group design",quality:"Data quality"})[k]}:</b> ${esc(({objective:"The director wants a defensible rollout recommendation, but has not specified whether the priority is more buyers, higher order value, or profit.",outcome:"The team has both a yes/no purchase indicator and a numeric order amount. Different analysts used different measures.",groups:"The director cannot confirm whether customers were assigned randomly, whether people appear in both groups, or whether group sizes are comparable.",quality:"Repeat customer identifiers and different denominators have been flagged. Counts and record-level data have not yet been reconciled."})[k])}</p>`).join("")}</div></div>`:""}<p>Respond as an MBA business analyst. Explain your reasoning and a recommendation. Do not just name a formula.</p><label for="role">Your independent response</label><textarea id="role" placeholder="I would advise the executive to...">${esc(s.role)}</textarea><div class="nav"><button id="back">← Quiz</button><button class="primary" id="rolenext">Review my reasoning →</button></div>`}
+if(s.stage===3){html+=`<h2>🔍 Verify and revise</h2><p>Compare your response with the key considerations below. These are suggestions to help you evaluate and strengthen your reasoning—not a grading rubric. Identify anything you overlooked, then revise your recommendation. The prototype does not automatically grade free-text answers.</p><div class="feedback"><b>What a strong answer considers:</b><ul>${m().checks.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><p><b>Challenge:</b> Which assumption in your recommendation is weakest? What evidence would change your decision?</p><label for="revision">Your revised reasoning</label><textarea id="revision" placeholder="I would strengthen my answer by...">${esc(s.revision)}</textarea><div class="nav"><button id="back">← Role-play</button><button class="primary" id="revnext">Continue to reflection →</button></div>`}
+if(s.stage===4){let score=m().questions.reduce((n,q,i)=>n+(s.answers[i]===q[2]?1:0),0);html+=`<h2>🌟 Learning reflection</h2><div class="feedback"><b>Independent quiz: ${score}/${m().questions.length} correct</b><p>Review your answers and explain what you would approach differently on an exam.</p></div><label for="reflection">What did you learn? What changed in your reasoning? What should you practice next?</label><textarea id="reflection" placeholder="Initially, I thought... After the challenge, I realized...">${esc(s.reflection)}</textarea><div class="nav"><button id="back">← Verification</button><button class="primary" id="export">Export my review summary</button></div><div class="nav"><button id="again">Practice another module</button><button id="coach">Continue with adaptive AI coach ↗</button></div>`}
+el.innerHTML=html;document.querySelector('#exam').onchange=e=>{s.exam=e.target.value;if(s.exam==='midterm'&&modules[s.module].exam==='final')s.module=4;reset();render()};document.querySelectorAll('[data-mod]').forEach(b=>b.onclick=()=>{s.module=+b.dataset.mod;render()});document.querySelectorAll('[data-clarify]').forEach(b=>b.onclick=()=>{s.clarifications[b.dataset.clarify]=true;render()});document.querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>{s.answers[s.qi]=+b.dataset.answer;render()});const on=(id,fn)=>{let b=document.getElementById(id);if(b)b.onclick=fn};on('start',()=>{s.stage=1;render()});on('quiznext',()=>{if(!s.show)s.show=true;else if(s.qi<m().questions.length-1){s.qi++;s.show=false}else s.stage=2;render()});on('back',()=>{if(s.stage===1)reset();else s.stage--;render()});['role','revision','reflection'].forEach(k=>{let a=document.getElementById(k);if(a)a.oninput=e=>s[k]=e.target.value});on('rolenext',()=>{if(s.role.trim().length<20)return alert('Please explain your recommendation in at least a sentence.');s.stage=3;render()});on('revnext',()=>{if(s.revision.trim().length<20)return alert('Please explain your revision in at least a sentence.');s.stage=4;render()});on('again',()=>{reset();render()});on('export',()=>{if(s.reflection.trim().length<15)return alert('Please complete your reflection first.');let score=m().questions.reduce((n,q,i)=>n+(s.answers[i]===q[2]?1:0),0);let txt=`MBA Analytics Learning Coach\nExam: ${s.exam}\nModule: ${m().name}\nQuiz score: ${score}/${m().questions.length}\n\nOriginal recommendation:\n${s.role}\n\nClarification topics explored: ${Object.keys(s.clarifications||{}).filter(k=>s.clarifications[k]).join(', ')||'None'}\n\nRevised reasoning:\n${s.revision}\n\nReflection:\n${s.reflection}`;let blob=new Blob([txt],{type:'text/plain'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='analytics-review-'+s.module+'.txt';a.click();URL.revokeObjectURL(a.href)});on('coach',()=>{let prompt=`Act as an MBA Data Analytics Learning Coach for the module ${m().name}. Role-play scenario: ${m().role}. My original response: ${s.role}. My revision: ${s.revision}. Ask one probing question at a time. Verify calculations and conceptual claims carefully; challenge assumptions and business interpretations. Do not reveal answers prematurely. After several turns, give constructive feedback.`;navigator.clipboard?.writeText(prompt).then(()=>alert('AI coach prompt copied. Paste it into ChatGPT to continue the role-play.'),()=>alert('Copy unavailable. Use the exported summary to continue in ChatGPT.'))})}render();
+</script></body></html>
